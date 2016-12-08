@@ -11,7 +11,7 @@ from httpie.compat import bytes
 from awsauth import S3Auth
 
 
-__version__ = '0.0.1'
+__version__ = '0.0.3'
 __author__ = 'Jakub Roztocil'
 __licence__ = 'BSD'
 
