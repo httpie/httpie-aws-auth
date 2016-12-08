@@ -28,7 +28,7 @@ The syntax and behavior is the same as with the basic auth.
 Specify both access key ID and secret
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-..code-block:: bash
+.. code-block:: bash
 
     http --auth-type aws -a ACCESSKEYXXX:AWSSECRETKEYXXX http://bucket.s3.amazonaws.com/test
 
@@ -38,7 +38,7 @@ Specify only the key
 
 There'll be a password prompt:
 
-..code-block:: bash
+.. code-block:: bash
 
     $ http -A aws -a ACCESSKEYXXX http://bucket.s3.amazonaws.com/test
     http: password for ACCESSKEYXXX@bucket.s3.amazonaws.com:

@@ -9,7 +9,7 @@ setup(
     name='httpie-aws-auth',
     description='AWS/S3 auth plugin for HTTPie.',
     long_description=open('README.rst').read().strip(),
-    version='0.0.1',
+    version='0.0.2',
     author='Jakub Roztocil',
     author_email='jakub@roztocil.co',
     license='BSD',
