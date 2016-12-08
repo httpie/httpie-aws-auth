@@ -41,7 +41,7 @@ There'll be a password prompt:
 .. code-block:: bash
 
     $ http -A aws -a ACCESSKEYXXX http://bucket.s3.amazonaws.com/test
-    http: password for ACCESSKEYXXX@bucket.s3.amazonaws.com:
+    http: password for ACCESSKEYXXX@bucket.s3.amazonaws.com: <enter aws secret key>
 
 
 Auth via the ``AWS_*`` environment variables
