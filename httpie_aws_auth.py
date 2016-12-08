@@ -29,7 +29,7 @@ class BytesHeadersFriendlyS3Auth(S3Auth):
                 # decode it here, the signature will be incorrect:
                 # https://github.com/tax/python-requests-aws/blob/46f2e90ea48e18d8f32c6473fecdf0da4ef04847/awsauth.py#L104
                 r.headers[k] = v.decode('utf8')
-        return super().__call__(r)
+        return super(BytesHeadersFriendlyS3Auth, self).__call__(r)
 
 
 class AWSAuthPlugin(AuthPlugin):
