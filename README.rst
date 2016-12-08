@@ -1,7 +1,7 @@
 httpie-aws-auth
 ===============
 
-AWS auth plugin for `HTTPie <https://github.com/jkbr/httpie>`_.
+AWS auth plugin for `HTTPie <https://httpie.org/>`_.
 
 
 Installation
@@ -19,8 +19,8 @@ Usage
 =====
 
 
-Credentials on the CLI:
------------------------
+Credentials on the CLI
+----------------------
 
 The syntax and behavior is the same as with the basic auth.
 
