@@ -1,7 +1,7 @@
 httpie-aws-auth
 ===============
 
-AWS auth plugin for `HTTPie <https://httpie.org/>`_.
+AWS / Amazon S3 auth plugin for `HTTPie <https://httpie.org/>`_.
 
 
 Installation
