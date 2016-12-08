@@ -9,7 +9,7 @@ Installation
 
 .. code-block:: bash
 
-    $ pip install httpie-aws-auth
+    $ pip install --upgrade httpie-aws-auth
 
 
 You should now see ``aws`` under ``--auth-type / -A`` in ``$ http --help`` output.
