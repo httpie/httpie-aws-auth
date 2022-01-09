@@ -5,7 +5,7 @@ AWS auth plugin for HTTPie.
 import os
 import sys
 
-from httpie import ExitStatus
+from httpie.status import ExitStatus
 from httpie.plugins import AuthPlugin
 from httpie.compat import bytes
 from awsauth import S3Auth
