@@ -7,7 +7,7 @@ import sys
 
 from httpie.status import ExitStatus
 from httpie.plugins import AuthPlugin
-from awsauth import S3Auth
+from requests_aws4auth import AWS4Auth
 
 
 __version__ = '0.0.3'
@@ -20,7 +20,7 @@ KEY = 'AWS_ACCESS_KEY_ID'
 SECRET = 'AWS_SECRET_ACCESS_KEY'
 
 
-class BytesHeadersFriendlyS3Auth(S3Auth):
+class BytesHeadersFriendlyS3Auth(AWS4Auth):
     def __call__(self, r):
         for k, v in r.headers.items():
             if isinstance(v, bytes):
@@ -34,7 +34,7 @@ class BytesHeadersFriendlyS3Auth(S3Auth):
 class AWSAuthPlugin(AuthPlugin):
     name = 'AWS auth'
     auth_type = 'aws'
-    description = ''
+    description = 'Obtains AWS credentials from AWS_* environment variables or from `--auth KEY_ID:KEY`'
     auth_require = False
     prompt_password = True
 
@@ -44,6 +44,10 @@ class AWSAuthPlugin(AuthPlugin):
         # the behaviour would be confusing to the user.
         access_key = os.environ.get(KEY) if username is None else username
         secret = os.environ.get(SECRET) if password is None else password
+        session_token = os.environ.get('AWS_SESSION_TOKEN', default=None)
+        default_region = os.environ.get('AWS_DEFAULT_REGION', default="us-east-1")
+        region = os.environ.get('AWS_REGION', default=default_region)
+        service = "s3"
         if not access_key or not secret:
             missing = []
             if not access_key:
@@ -56,4 +60,4 @@ class AWSAuthPlugin(AuthPlugin):
             )
             sys.exit(ExitStatus.PLUGIN_ERROR)
 
-        return BytesHeadersFriendlyS3Auth(access_key, secret)
+        return BytesHeadersFriendlyS3Auth(access_key, secret, region, service, session_token=session_token)
