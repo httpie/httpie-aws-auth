@@ -7,7 +7,6 @@ import sys
 
 from httpie.status import ExitStatus
 from httpie.plugins import AuthPlugin
-from httpie.compat import bytes
 from awsauth import S3Auth
 
 
