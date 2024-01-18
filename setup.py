@@ -24,7 +24,7 @@ setup(
     },
     install_requires=[
         'httpie>=0.9.7',
-        'requests-aws>=0.1.8'
+        'requests-aws4auth>=1.0.0'
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
